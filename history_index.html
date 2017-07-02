@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Video Call</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://www.iconfinder.com/data/icons/complete-set-icons/512/video512x512.png">
+<!--     <script src="https://raw.githubusercontent.com/feross/simple-peer/master/simplepeer.min.js"></script> -->
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        /*video {
+            width: 40%;
+            height: 400px;
+        }*/
+
+        textarea {
+            width: 400px;
+            height: 100px;
+        }
+
+        @media screen and (max-width: 800px) {
+            #video_kamu,
+            #video_penerima {
+                width: 310px;
+                height: 310px;
+            }
+            textarea {
+                width: 300px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav navbar-fixed-top bg-primary">
+        <a href="" class="navbar-brand bg-success">Demo WebRTC</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Penerima</h2>
+                <video id="receiver-video" width="100%" height="400px" controls></video>
+                <p>
+                    <button id="start" class="btn btn-primary">Masuk ke konversasi</button>
+                </p>
+                <textarea name="" id="offer" class="form-control"></textarea>
+            </div>
+            <div class="col-sm-6">
+                <h2>Anda</h2>
+                <video id="emitter-video" width="100%" height="400px" controls></video>
+                <p>
+                    <button id="receiver" class="btn btn-primary">Orang Kedua</button>
+                </p>
+                <form id="incoming">
+                    <div class="form-group">
+                        <textarea class="form-control" id="text_area"></textarea>
+                    </div>
+                    <p>
+                        <button type="submit" class="btn btn-success" id="submit_button">register</button>
+                        <!--<input type="button" id="submit_button2" value="register2">-->
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="simplepeer.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
